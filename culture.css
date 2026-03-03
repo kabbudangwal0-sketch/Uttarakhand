@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f2027;
+  color: white;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #00bcd4;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00bcd4;
+}
+
+
+.hero {
+  height: 60vh;
+  background: url('./assest/uttarakhand\ logo.jpg logo.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-top: 70px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+}
+
+.hero-content p {
+  color: #ddd;
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+
+.culture-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #203a43, #2c5364);
+}
+
+.culture-section h2 {
+  color: #00bcd4;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  color: #ccc;
+  max-width: 900px;
+  margin: 10px auto 50px;
+  line-height: 1.6;
+}
+
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 40px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 5px 25px rgba(0, 188, 212, 0.4);
+}
+
+
+.card img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+
+.card-content {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  color: #00bcd4;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.card-content p {
+  color: #ddd;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .culture-grid {
+    grid-template-columns: 1fr; 
+    padding: 0 20px;
+  }
+
+  .card img {
+    height: 180px; 
+  }
+}

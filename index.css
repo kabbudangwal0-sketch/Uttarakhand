@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f2027;
+  color: white;
+  overflow-x: hidden;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: 0.3s;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #00bcd4;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #00bcd4;
+}
+
+
+.hero {
+  height: 100vh;
+  background: url('./assest/uttarakhand\ logo.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.1em;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.hero-content button {
+  padding: 10px 25px;
+  font-size: 1em;
+  border: none;
+  border-radius: 25px;
+  background: #00bcd4;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-content button:hover {
+  background: #0288d1;
+  transform: scale(1.05);
+}
+
+
+#aboutUK {
+  display: none; 
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#aboutUK h2 {
+  color: #00bcd4;
+  font-size: 2em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#aboutUK p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+/* .about {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #203a43, #2c5364);
+}
+
+.about h2 {
+  color: #00bcd4;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #ddd;
+  line-height: 1.6;
+  font-size: 1em;
+} */
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 0.95em;
+  }
+}
